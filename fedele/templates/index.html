@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore Percentuale</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+    <form action="/calcola_percentuale" method="post">
+        <label for="numero_under14">Numero Under 14:</label>
+        <input type="number" min="0" id="numero_under14" name="numero_under14" required>
+
+        <label for="numero_1564">Numero tra 15-64:</label>
+        <input type="number" min="0" id="numero_1564" name="numero_1564" required>
+
+        <label for="numero_over65">Numero Over 65:</label>
+        <input type="number" min="0" id="numero_over65" name="numero_over65" required>
+
+        <input type="submit" name="grafico" value="Calcola i grafici">
+         <br> 
+       <input type="button" id="cancellaEInserisci" value="Cancella Grafici e Inserisci Nuovi Dati">
+    </form>
+    
+    <script>
+        document.getElementById('cancellaEInserisci').addEventListener('click', function() {
+        fetch('/cancella_e_inserisci', {
+            method: 'POST'
+        }).then(response => {
+            if (response.ok) {
+                // Ricarica la pagina dopo aver cancellato i grafici e inserito nuovi dati
+                location.reload();
+            }
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+/* Stile per il corpo della pagina */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Stile per il modulo e gli elementi del modulo */
+form {
+    background-color: #fff;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Centra gli elementi nel modulo */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Stile per i pulsanti del modulo */
+input[type="submit"],
+input[type="button"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block; /* Imposta i pulsanti come elementi block per separarli */
+    margin: 10px auto; /* Crea uno spazio tra i pulsanti e li centra orizzontalmente */
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: red;
+}
+
+/* Stile per il bottone "Cancella Campi" */
+#cancellaCampi {
+    background-color: #dc3545;
+}
+
+#cancellaCampi:hover {
+    background-color: #c82333;
+}
+

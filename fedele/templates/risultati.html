@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultati</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+
+    <!-- Aggiungi il timestamp casuale alla query string per forzare il caricamento di nuovi grafici -->
+    <!-- <img src="static/fedele.png" alt="Grafico a torta">
+    <img src="static/fedele2.png" alt="Grafico a barre"> -->
+    <img src="data:image/png;base64, {{ pie_chart_base64 }}" alt="Grafico a torta">
+    <img src="data:image/png;base64, {{ bar_chart_base64 }}" alt="Grafico a barre">
+
+    <h2>Risultati demografici Italia:</h2>
+    <p>Under 14: {{ numero_under14 }} = Percentuale: {{ percentuale_under14 }}%</p>
+    <p>Tra i 15-64: {{ numero_1564 }} = Percentuale: {{ percentuale_1564 }}%</p>
+    <p>Over 65: {{ numero_over65 }} = Percentuale: {{ percentuale_over65 }}%</p>
+</body>
+</html>
