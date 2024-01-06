@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+    </head>
+    <body>
+
+    <script>
+    let classeXML;
+    let classeFetch;
+
+    let url = './classe.json';
+
+    // Utilizza il metodo fetch per ottenere il JSON
+    fetch(url)
+    .then(response => response.json())
+    .then(json => {
+        classeFetch = json;
+        console.log('fetch:', classeFetch);
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+    });
+
+    // Utilizza XMLHttpRequest per ottenere il JSON
+    let request = new XMLHttpRequest();
+    request.open('GET', url);
+    request.responseType = 'json';
+
+    request.onload = function() {
+    classeXML = request.response;
+    console.log('XMLHttpRequest:', classeXML);
+    };
+
+    request.onerror = function() {
+    console.error('XMLHttpRequest error');
+    };
+
+    request.send();
+
+    
+    </script>
+    </body>
+</html>

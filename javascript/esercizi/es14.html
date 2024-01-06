@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: gray;
+      }
+
+      #card {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Modifica interattiva di una Card</h1>
+
+    <section>
+      <div>
+        <label for="image">Immagini URL</label>
+        <input type="text" id="image" />
+      </div>
+
+      <label for="title-color">Colore Titolo</label>
+      <input type="color" id="title-color" />
+
+      <div>
+        <label for="paragraph-color">Colore Testo</label>
+        <input type="color" id="paragraph-color" />
+      </div>
+
+      <div>
+        <label for="padding-x">Padding Orizzontale</label>
+        <input type="number" id="padding-x" />
+      </div>
+
+      <div>
+        <label for="padding-y">Padding Verticale</label>
+        <input type="number" id="padding-y" />
+      </div>
+
+      <div>
+        <label for="border-radius">Bordi Arrotondati </label>
+        <input type="number" id="border-radius" />
+      </div>
+    </section>
+
+    <div id="card">
+      <img src="caffe.jpg" alt="immagine" id="img" />
+      <div>
+        <h2>Titolo della card</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, neque
+          eaque. Distinctio voluptas dignissimos dolore ipsum voluptatem
+          inventore voluptate odio ipsa suscipit. Cum ducimus error facilis
+          reprehenderit pariatur, odio amet.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      //modifica card
+      const urlImmagine = document.getElementById("image");
+      const coloreTitolo = document.getElementById("title-color");
+      const coloreParagrafo = document.getElementById("paragraph-color");
+      const paddingX = document.getElementById("padding-x");
+      const paddingY = document.getElementById("padding-y");
+      const borderRadius = document.getElementById("border-radius");
+    
+      urlImmagine.addEventListener("change", (e) => {
+      const immagine = document.querySelector("#card img");
+      immagine.src = e.target.value;
+      });
+
+    coloreTitolo.addEventListener("input", (e) => {
+    const titolo = document.querySelector("#card h2");
+    titolo.style.color = e.target.value;
+    });
+
+    coloreParagrafo.addEventListener("input", (e) => {
+    const testo = document.querySelector("#card p");
+    testo.style.color = e.target.value;
+    });
+
+    paddingX.addEventListener("input", (e) => {
+    const div = document.querySelector("#card div");
+    div.style.paddingLeft = `${e.target.value}px`;
+    div.style.paddingRight = `${e.target.value}px`;
+    });
+
+    paddingY.addEventListener("input", (e) => {
+    const div = document.querySelector("#card div");
+    div.style.paddingTop = `${e.target.value}px`;
+    div.style.paddingBottom = `${e.target.value}px`;
+    });
+
+    borderRadius.addEventListener("input", (e) => {
+    const card = document.getElementById("card");
+    const immagine = document.getElementById("img");
+    card.style.borderRadius = `${e.target.value}px`;
+    immagine.style.borderTopLeftRadius = `${e.target.value}px`;
+    immagine.style.borderTopRightRadius = `${e.target.value}px`;
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+    </head>
+    <body>
+
+    <script>
+    //condizioni if e else
+    let nome = 'luca';
+    let numero = 15;
+
+    if(nome == 'luca'){
+        console.log('ciao luca');
+    }else if(nome == 'marco'){
+        console.log('ciao marco');
+    }else {
+        console.log('ciao persona anonima');
+    }
+
+    if(!(nome == 'luca')){
+        console.log('ok');
+    }else 
+        console.log('non va bene');
+    
+
+    if(numero > 14){
+        console.log('ok');
+    }else {
+        console.log('non va bene');
+    }
+     if (numero % 2 == 0){    
+        console.log('numero pari ');
+    }else {
+        console.log('numero dispari');
+    }
+   
+   //switch
+   switch(nome){
+        case 'fedele':
+        console.log('ciao fedele');
+        break;
+        case 'marco':
+        console.log('ciao marco');
+        break;
+        case 'gino':
+        console.log('ciao gino');
+        break;
+        default:
+            console.log('non va')
+   }
+
+   //loop (italiano cicli)
+   let array = [12,13,78,56,7,234];
+
+   for(let i=0; i<array.length; i++){
+        console.log(array[i]);
+        if(array[i]  == 56){
+            break;
+        }
+       // if(array[i] %2 == 0){
+         //   continue;
+      //  }
+    }
+
+    
+
+    </script>
+    </body>
+</html>

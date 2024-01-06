@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+    </head>
+    <body>
+
+    <script>
+     let array = []
+     const numeroELemneti = 10
+     const max = 100
+     for(let i=0; i<numeroELemneti;i++){
+        array.push(Math.floor(Math.random()*max))
+     }
+    
+     array.forEach(numero =>{
+       // if  (numero % 2 == 0){
+         //    console.log(`${numero}è pari`)
+         // }else{
+        //      console.log(`${numero}è dispari`)
+        //  }
+
+        const tipo = numero % 2 == 0 ? 'pari':'dispari'
+        console.log(`${numero} è ${tipo}`)
+     });
+    </script>
+    </body>
+</html>

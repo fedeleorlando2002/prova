@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+    </head>
+    <body>
+        <button id="bottone" class="prova">bottone</button>
+        <div class="prova"></div>
+        <span class="prova"></span>
+        <p></p>
+    <script>
+    //prendere elementi
+    let x = document.getElementById('bottone');
+
+    let y = document.querySelector('button');
+    let z = document.querySelector('#bottone');
+    let k = document.querySelector('.prova');
+
+    let w = document.querySelectorAll('.prova');
+    
+    let j = document.getElementsByClassName('prova');
+    
+    // creare nuovi nodi
+    const div = document.querySelector('div');
+    const paragrafo = document.createElement('p');
+    paragrafo.textContent = 'elemento creato';
+    div.appendChild(paragrafo);
+
+    const extraTesto = document.createTextNode('altro testo');
+    paragrafo.appendChild(extraTesto);
+
+       // spostare e rimuovere nodi
+       paragrafo.removeChild(extraTesto);
+
+       //manipolare stili
+       paragrafo.style.color = 'red';
+       paragrafo.style.backgroundColor = 'black';
+       paragrafo.style.padding = '10px';
+       paragrafo.style.textAlign = 'center';
+
+       //aggiungere attributi
+       //paragrafo.setAttribute('class','modificaStili');
+        paragrafo.setAttribute('data-value','ciao');
+        console.log(paragrafo.getAttribute('data-value'));
+    </script>
+    </body>
+</html>

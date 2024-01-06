@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <table id="tabella">
+        <thead>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Cognome</th>
+          <th>Email</th>
+          <th>Codice Fiscale</th>
+          <th>Indirizzo</th>
+        </thead>
+      </table>
+    
+      <script>
+        // crea tabella
+        const data = [
+        {
+            id: 1,
+            nome: "luca",
+            cognome: "rossi",
+            email: "luca.rossi@gmmaaaaailit",
+            codiceFiscale: "kdrwde32f93x109m",
+            indirizzo: "via torino",
+        },
+        {
+            id: 2,
+            nome: "marco",
+            cognome: "verdi",
+            email: "marco.verdi@gmmaaaaailit",
+            codiceFiscale: "gbbfrw54f32x176p",
+            indirizzo: "via piacenza",
+        },
+        ];
+
+        
+        const table = document.getElementById("tabella");
+
+        data.forEach((element) => {
+        const row = document.createElement("tr");
+
+        Object.keys(element).forEach((key) => {
+        const column = document.createElement("td");
+        const text = document.createTextNode(element[key]);
+        column.appendChild(text);
+        row.appendChild(column);
+    });
+    
+    table.appendChild(row);
+        });
+      </script>
+    </div>
+  </body>
+</html>

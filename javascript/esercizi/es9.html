@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+  </head>
+  <body>
+    <section class="m-5 p-5">
+        <input type="text" class="border-2 p-2" placeholder="chi stai cercando?" id="ricerca" />
+        <div id="risultati" class="border-2 p-2"></div>
+      </section>
+
+    <script>
+    //crare barra di ricerca con autocomplete
+    const input = document.getElementById("ricerca");
+    input.addEventListener("keyup", autocomplete);
+    const risultati = document.getElementById("risultati");
+    const nomi = ["andrea","anna","marco","luca","giovanni","fedele",];
+
+    //Funzione match del valore
+    function autocompleteMatch(valore) {
+    if (valore == "") return [];
+    const reg = new RegExp(valore);
+    return nomi.filter((nome) => {
+        if (nome.match(reg)) return nome;
+    });
+    }
+
+    //Funzione autocompletamento
+    function autocomplete(event) {
+    let nomiConsigliati = "";
+    const nomi = autocompleteMatch(event.target.value);
+    nomi.forEach((nome) => {
+        nomiConsigliati += `<li class="hover:bg-gray-200" onclick="seleziona(event)">${nome}</li>`;
+    });
+    risultati.innerHTML = `<ul>${nomiConsigliati}</ul>`;
+    }
+
+    //Funzione per selezionare il suggerimento
+    function seleziona(event) {
+    risultati.innerHTML = "";
+    input.value = event.target.textContent;
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+{
+    "nome":"5A",
+    "numeroAlunni":24,
+    "scuola":"scuola elementare pascoli",
+    "insegnanti":[
+        {
+            "nome":"anna",
+            "cognome":"rossi",
+            "materia":["storia","geografia"]
+        },
+        {
+            "nome":"anna",
+            "cognome":"verdi",
+            "materia":["italiano","matematica"]
+        }
+    ],
+    "alunni":[
+        {
+    
+        "nome":"paolo",
+        "cognome":"domanda"           
+    },
+        {
+            "nome":"anna",
+            "cognome":"verdi"                   
+    }
+    ],
+    "orari":[
+        {
+    
+        "mattina":["taliano"],
+        "cognome":["matematica"]           
+    }
+    ]
+}

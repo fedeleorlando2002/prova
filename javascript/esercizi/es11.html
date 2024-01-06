@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    <script src="https://cdn.tailwindcss.com"> </script>
+    </head>
+    <body class="bg-gray-200 flex flex-col items-center justify-center">
+    <button id="open-modal" class="p-3 m-3 bg-blue-300">Apri modal</button>
+   <div id="modal" class="w-[500px] h-[500px] bg-white rounded-x1 p-3 ">
+    <button id="close-modal" class="float-right">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>          
+    </button>
+   </div>
+
+   <script>
+    // finestra modal
+    const openModalbtn = document.getElementById("open-modal");
+    const closeModalbtn = document.getElementById("close-modal");
+    const modal = document.getElementById("modal")
+
+    openModalbtn.addEventListener("click", openModal);
+    closeModalbtn.addEventListener("click", closeModal);
+
+    function openModal(){
+        console.log("apro modal");
+        modal.classList.remove("hidden")  
+    }
+    function closeModal(){
+        console.log("chiudo modal");
+        modal.classList.add("hidden") 
+    }
+    </script>
+    </body>
+</html>
