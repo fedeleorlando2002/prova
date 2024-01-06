@@ -1,0 +1,40 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<title>Prodotti</title>
+	</head>
+	<body>
+	<h1>Lista dei prodotti</h1>
+	{% if products %}
+	<table>
+	<tr>
+	<th>ID</th>
+	<th>Nome</th>
+	<th>Descrizione</th>
+	<th>Prezzo</th>
+	<th>Azioni</th>
+	</tr>
+	{% for product in products %}
+	<tr>
+	<td>{{ product['id'] }}</td>
+	<td>{{ product['name'] }}</td>
+	<td>{{ product['description'] }}</td>
+	<td>{{ product['price'] }}</td>
+	<td>
+	<a href="/products/{{ product['id'] }}">Visualizza</a>
+	<a href="/products/{{ product['id'] }}/edit">Modifica</a>
+	<form method="POST" action="/products/{{ product['id'] }}" style="display: inline-block;">
+	<input type="hidden" name="_method" value="DELETE">
+	<input type="submit" value="Elimina">
+	</form>
+	</td>
+	</tr>
+	{% endfor %}
+	</table>
+	{% else %}
+	<p>Nessun prodotto presente</p>
+	{% endif %}
+	<br>
+	<a href="/products/add">Aggiungi un nuovo prodotto</a>
+	</body>
+	</html>
